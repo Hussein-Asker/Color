@@ -1,0 +1,42 @@
+<div class="header">the header</div>
+
+<style>
+* {margin:0;padding:0}
+
+html {
+    background: lightgray;
+    height: 5000px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    transition: all 1s ease-in-out;
+    height: auto;
+    background-color:blue;
+    
+    text-align: center;
+    line-height: 40px;
+}
+
+.header.active {
+    background: red;
+    
+}
+
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 800) {
+        $(".header").addClass("active");
+    } else {
+       $(".header").removeClass("active");
+    }
+})
+</script>
